@@ -2,11 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AttendanceProCloudFunctions.Data
 {
+    /// <summary>
+    /// This class is used as a migration layer between C# domain classes and database through Entity Framework Core.
+    /// </summary>
     public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }

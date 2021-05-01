@@ -20,7 +20,10 @@ namespace AttendanceProCloudFunctions
         {
             this.DbContext = DbContext;
         }
-
+        /// <summary>
+        /// This serverless function (Azure function) is used to upload the new spreadsheet data to the database.
+        /// </summary>
+        /// <param name="req">HTTP request object</param>
         [FunctionName("UploadFile")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req)
