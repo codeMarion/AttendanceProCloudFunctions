@@ -14,7 +14,7 @@ namespace AttendanceProCloudFunctions
     {
         public override void Configure(IFunctionsHostBuilder builder)
         {
-            builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(Environment.GetEnvironmentVariable("SqlConnectionString")));
+            builder.Services.AddDbContext<DataContext>(x => x.UseNpgsql(Environment.GetEnvironmentVariable("SqlConnectionString")));
             builder.Services
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>

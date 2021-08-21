@@ -17,7 +17,7 @@ namespace AttendanceProCloudFunctions.Data
             public DataContext CreateDbContext(string[] args)
             {
                 var optionsBuilder = new DbContextOptionsBuilder<DataContext>();
-                optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("SqlConnectionString"));
+                optionsBuilder.UseNpgsql(Environment.GetEnvironmentVariable("SqlConnectionString"));
                 return new DataContext(optionsBuilder.Options);
             }
         }
